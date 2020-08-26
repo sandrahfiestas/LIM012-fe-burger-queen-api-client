@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "burger"
+    }
+  },
+  "defaultProject": "burger",
+  "cli": {
+    "analytics": false
+  }
 }
