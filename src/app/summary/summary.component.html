@@ -1,0 +1,208 @@
+<style>
+    .ticket-container {
+        height: 686px;
+        width: 450px;
+        margin-top: 19px;
+        margin-bottom: 0px;
+        background-color: #A5A79A;
+    }
+
+    .ticket-header {
+        display: flex;
+        background-color: #A5A79A;
+        flex-direction: column;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        font-weight: bolder;
+    }
+
+    .ticket-subtitle {
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 19px;
+        border-bottom-style: solid;
+        border-width: 2px;
+        margin-bottom: 15px;
+    } 
+
+    .ticket-client {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .ticket-input {
+        height: 20px;
+        width: 220px;
+        margin-right: 35px;
+        background-color: #817172;
+        color: white;
+    }
+
+    .ticket-height {
+        height: 350px;
+    }
+
+    .ticket-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+    }
+
+    .tr-header {
+        height: 30px;
+        /* position: absolute; */
+        background: #ECA442;
+    }
+  
+    .tr-detail {
+        border-bottom-style: solid;
+        border-width: 2px;
+    }
+
+    .th-more-less {
+        width: 2px;
+    }
+
+    .no-style {
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .scroll {
+        overflow: auto;
+    }
+
+    .total-order {
+        height: 45px;
+        display: flex;
+        font-weight: bolder;
+        font-size: 20px;
+        padding-right: 50px;
+        padding-left: 50px;
+        align-items: center;
+        background: #ECA442;
+        justify-content: space-between;
+    }
+
+    .menu-btns-active {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .buttons-database-confirm {
+        padding: 3px;
+        width: 170px;
+        height: 45px;
+        background: #EB5F00;
+        border: 1px solid #B14113;
+        box-shadow: 0px 4px 4px #D62020;
+        border-radius: 22px;
+        color: white;
+        text-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        outline: none;
+        cursor: pointer;
+    }
+
+    .buttons-database-confirm:hover {
+        background-color: #b33f12;
+        border: 1px solid  #EB5F00;
+        opacity: 0.9;
+    }
+
+    .buttons-database-cancel {
+        padding: 3px;
+        width: 170px;
+        height: 45px;
+        background: #B14113;
+        border: 1px solid #EB5F00;
+        box-shadow: 0px 4px 4px #D62020;
+        border-radius: 22px;
+        color: white;
+        text-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        outline: none;
+        cursor: pointer;
+    }
+
+    .buttons-database-cancel:hover {
+        background-color: #5f240d;
+        border: 1px solid  #EB5F00;
+        opacity: 0.9;
+    }
+</style>
+
+<div class="ticket-container">
+    <div class="ticket-header">
+        <div class="ticket-subtitle">CONSUMO</div>
+        <div class="ticket-client">
+            Cliente :
+            <input class="ticket-input" type="text" placeholder="Nombre de cliente"/>
+        </div>
+        <div class="ticket-client">
+            Numero de mesa :
+            <input class="ticket-input" type="text" placeholder="Numero de mesa"/>            
+        </div>
+        <div class="ticket-client">
+            Hora de atención :
+            <!-- HORA am/pm -->
+        </div>
+    </div>
+    <div class="ticket-height scroll">
+        <table class="ticket-table">
+            <thead>
+              <tr class="tr-header">
+                <th scope="col" class="th-more-less"></th> 
+                <th scope="col" class="th-more-less"></th>
+                <th scope="col">Cant.</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Total</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-detail">
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/more.png" alt="" /></button></th>
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/less.png" alt="" /></button></th>
+                    <th scope="col"><p class="">1</p></th>
+                    <th scope="col">Café americano</th>
+                    <th scope="col">
+                    S/5.00
+                    </th>
+                    <th scope="col">
+                    S/5.00
+                    </th>
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/delete.png" alt="" /></button></th>
+                </tr>
+                <tr class="tr-detail">
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/more.png" alt="" /></button></th>
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/less.png" alt="" /></button></th>
+                    <th scope="col"><p class="">2</p></th>
+                    <th scope="col">Café con leche</th>
+                    <th scope="col">
+                    S/7.00
+                    </th>
+                    <th scope="col">
+                    S/14.00
+                    </th>
+                    <th scope="col"><button class="no-style"><img src="../../assets/images/delete.png" alt="" /></button></th>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+    <div class="total-order">
+        TOTAL DE PEDIDO
+        <p>S/ 19.00</p>
+    </div>
+    <div class="menu-btns-active">
+        <button id="confirm" class="buttons-database-confirm">CONFIRMAR</button>
+        <button id="cancel" class="buttons-database-cancel">CANCELAR</button>
+    </div>
+</div>

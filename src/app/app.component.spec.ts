@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'burger'`, () => {
+  it(`should have as title 'LIM012-fe-burger-queen-api-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('burger');
+    expect(app.title).toEqual('LIM012-fe-burger-queen-api-client');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('burger app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('LIM012-fe-burger-queen-api-client app is running!');
   });
 });
