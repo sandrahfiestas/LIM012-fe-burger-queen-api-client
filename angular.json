@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "LIM012-fe-burger-queen-api-client"
+    }
+  },
+  "defaultProject": "LIM012-fe-burger-queen-api-client",
+  "cli": {
+    "analytics": false
+  }
 }
