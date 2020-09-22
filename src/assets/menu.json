@@ -7,7 +7,7 @@
         "count": 1,
         "type": "breakfast",
         "subType": "",
-        "image": "coffee.jpg"
+        "image": "/assets/images/coffee.png"
       },
       {
         "id": "b2",
@@ -16,7 +16,7 @@
         "count": 1,
         "type": "breakfast",
         "subType": "",
-        "image": "latte.jpg"
+        "image": "/assets/images/latte.png"
       },
       {
         "id": "b3",
@@ -25,7 +25,7 @@
         "count": 1,
         "type": "breakfast",
         "subType": "",
-        "image": "sandwich.jpg"
+        "image": "/assets/images/sandwich.png"
       },
       {
         "id": "b4",
@@ -34,7 +34,7 @@
         "count": 1,
         "type": "breakfast",
         "subType": "",
-        "image": "juice.jpg"
+        "image": "/assets/images/juice.png"
       },
       {
         "id": "l10",
@@ -43,7 +43,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerSimple.jpg"
+        "image": "/assets/images/burgerSimple.png"
       },
       {
         "id": "l11",
@@ -52,7 +52,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerDouble.jpg"
+        "image": "/assets/images/burgerDouble.png"
       },
       {
         "id": "l12",
@@ -61,7 +61,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerSimple.jpg"
+        "image": "/assets/images/burgerSimple.png"
       },
       {
         "id": "l13",
@@ -70,7 +70,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerDouble.jpg"
+        "image": "/assets/images/burgerDouble.png"
       },
       {
         "id": "l14",
@@ -79,7 +79,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerSimple.jpg"
+        "image": "/assets/images/burgerSimple.png"
       },
       {
         "id": "l15",
@@ -88,7 +88,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "burgerDouble.jpg"
+        "image": "/assets/images/burgerDouble.png"
       },
       {
         "id": "c1",
@@ -97,7 +97,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "accompaniments",
-        "image": "chips.jpg"
+        "image": "/assets/images/chips.png"
       },
       {
         "id": "c2",
@@ -106,7 +106,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "accompaniments",
-        "image": "onion.jpg"
+        "image": "/assets/images/onion.png"
       },
       {
         "id": "d1",
@@ -115,7 +115,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "drinks",
-        "image": "water500.jpg"
+        "image": "/assets/images/water500.png"
       },
       {
         "id": "d2",
@@ -124,7 +124,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "drinks",
-        "image": "water750.jpg"
+        "image": "/assets/images/water750.png"
       },
       {
         "id": "d3",
@@ -133,7 +133,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "drinks",
-        "image": "soda500.jpg"
+        "image": "/assets/images/soda500.png"
       },
       {
         "id": "d4",
@@ -142,7 +142,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "drinks",
-        "image": "soda750.jpg"
+        "image": "/assets/images/soda750.png"
       },
       {
         "id": "ad1",
@@ -151,7 +151,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "additional",
-        "image": "cheese.jpg"
+        "image": "/assets/images/cheese.png"
       },
       {
         "id": "ad2",
@@ -160,7 +160,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "additional",
-        "image": "egg.jpg"
+        "image": "/assets/images/egg.png"
       }
     ]
   }

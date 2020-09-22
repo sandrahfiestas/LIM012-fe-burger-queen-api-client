@@ -88,18 +88,22 @@
 
 <div class="product-container">
   <div class="order-btns">
-    <button class="btns-menu">DESAYUNO</button>
-    <button class="btns-menu">ALMUERZO / CENA</button>
+    <button (click)="getBreakfast($event)" class="btns-menu">DESAYUNO</button>
+    <button (click)="getLunch($event)" class="btns-menu">ALMUERZO / CENA</button>
   </div>
   <div class="container-menu">
     <div class="breakfast-menu">
-      <div class="breakfast-item">
-        <button class="btn-add-product">Add</button>
-        <p>Cafe americano</p>
-        <p>S/ 5.00</p>
-        <img class="image-product" src="../../assets/images/coffee.png" alt="image">
+      <!-- <li *ngFor="let product of products$">
+        {{product.name}}
+      </li> -->
+
+      <div class="breakfast-item" *ngFor="let product of products$">
+        <button class="btn-add-product" (click)="addProduct(product)">Add</button>
+        <p>{{product.name}}</p>
+        <p>S/ {{product.price}}</p>
+        <img class="image-product" [src]="product.image" alt="image">
       </div>
-      <div class="breakfast-item">
+      <!-- <div class="breakfast-item">
         <button class="btn-add-product">Add</button>
         <p>Cafe con leche</p>
         <p>S/ 7.00</p>
@@ -116,7 +120,7 @@
         <p>Sandwich de jamon y queso</p>
         <p>S/ 10.00</p>
         <img class="image-product" src="../../assets/images/sandwich.png" alt="image">
-      </div>
+      </div> -->
     </div>
     <!-- <Summary summary={summary} /> -->
   </div>
