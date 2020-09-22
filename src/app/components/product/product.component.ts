@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductService } from '../services/product.service';
-import { Product } from '../models/product';
-import { Order } from '../models/order';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
+import { Order } from '../../models/order';
 
 @Component({
   selector: 'app-product',
@@ -33,3 +33,4 @@ export class ProductComponent implements OnInit {
 console.log(product);
   }
 }
+
