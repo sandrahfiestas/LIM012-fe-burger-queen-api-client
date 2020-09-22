@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
-import { Order } from '../../models/order';
+import { SummaryComponent } from '../summary/summary.component';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.sass']
 })
+
 export class ProductComponent implements OnInit {
   products$ = new Observable<Array<Product>>();
-  orders$ = new Observable<Order>();
+
+  @Input() summary: SummaryComponent;
 
   constructor(private productService: ProductService) { }
 
@@ -20,17 +22,16 @@ export class ProductComponent implements OnInit {
     console.log(this.products$);
   }
 
-  getBreakfast($event){    
-    this.products$ = this.productService.getProductsForBreakfast();  
-  }    
+  getBreakfast($event) {
+    this.products$ = this.productService.getProductsForBreakfast();
+  }
 
-  getLunch($event){    
-    this.products$ = this.productService.getProductsForLunch();  
-  }  
-  
-  addProduct(product){
-    
-console.log(product);
+  getLunch($event) {
+    this.products$ = this.productService.getProductsForLunch();
+  }
+
+  addProduct(product) {
+    this.summary.addOrderedProduct(product);
   }
 }
 

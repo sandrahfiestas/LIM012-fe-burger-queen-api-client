@@ -23,7 +23,7 @@
         border-bottom-style: solid;
         border-width: 2px;
         margin-bottom: 15px;
-    } 
+    }
 
     .ticket-client {
         display: flex;
@@ -57,7 +57,7 @@
         /* position: absolute; */
         background: #ECA442;
     }
-  
+
     .tr-detail {
         border-bottom-style: solid;
         border-width: 2px;
@@ -113,7 +113,7 @@
 
     .buttons-database-confirm:hover {
         background-color: #b33f12;
-        border: 1px solid  #EB5F00;
+        border: 1px solid #EB5F00;
         opacity: 0.9;
     }
 
@@ -133,7 +133,7 @@
 
     .buttons-database-cancel:hover {
         background-color: #5f240d;
-        border: 1px solid  #EB5F00;
+        border: 1px solid #EB5F00;
         opacity: 0.9;
     }
 </style>
@@ -143,11 +143,11 @@
         <div class="ticket-subtitle">CONSUMO</div>
         <div class="ticket-client">
             Cliente :
-            <input class="ticket-input" type="text" placeholder="Nombre de cliente"/>
+            <input class="ticket-input" type="text" placeholder="Nombre de cliente" />
         </div>
         <div class="ticket-client">
             Numero de mesa :
-            <input class="ticket-input" type="text" placeholder="Numero de mesa"/>            
+            <input class="ticket-input" type="text" placeholder="Numero de mesa" />
         </div>
         <div class="ticket-client">
             Hora de atención :
@@ -157,53 +157,44 @@
     <div class="ticket-height scroll">
         <table class="ticket-table">
             <thead>
-              <tr class="tr-header">
-                <th scope="col" class="th-more-less"></th> 
-                <th scope="col" class="th-more-less"></th>
-                <th scope="col">Cant.</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Total</th>
-                <th scope="col">Eliminar</th>
-              </tr>
+                <tr class="tr-header">
+                    <th scope="col" class="th-more-less"></th>
+                    <th scope="col" class="th-more-less"></th>
+                    <th scope="col">Cant.</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
             </thead>
             <tbody>
-                <tr class="tr-detail">
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/more.png" alt="" /></button></th>
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/less.png" alt="" /></button></th>
-                    <th scope="col"><p class="">1</p></th>
-                    <th scope="col">Café americano</th>
-                    <th scope="col">
-                    S/5.00
+                <tr class="tr-detail" *ngFor="let product of orderedProducts">
+                    <th scope="col"><button (click)="addOrderedProduct(product)" class="no-style"><img src="../../assets/images/more.png" alt="" /></button>
+                    </th>
+                    <th scope="col"><button (click)="decreaseProduct(product)" class="no-style"><img src="../../assets/images/less.png" alt="" /></button>
                     </th>
                     <th scope="col">
-                    S/5.00
+                        <p class="">{{product.count}}</p>
                     </th>
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/delete.png" alt="" /></button></th>
+                    <th scope="col">{{product.name}}</th>
+                    <th scope="col">
+                        S/{{product.price}}
+                    </th>
+                    <th scope="col">
+                        S/{{product.price * product.count}}
+                    </th>
+                    <th scope="col"><button (click)="deleteProduct(product)" class="no-style"><img src="../../assets/images/delete.png"
+                                alt="" /></button></th>
                 </tr>
-                <tr class="tr-detail">
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/more.png" alt="" /></button></th>
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/less.png" alt="" /></button></th>
-                    <th scope="col"><p class="">2</p></th>
-                    <th scope="col">Café con leche</th>
-                    <th scope="col">
-                    S/7.00
-                    </th>
-                    <th scope="col">
-                    S/14.00
-                    </th>
-                    <th scope="col"><button class="no-style"><img src="../../assets/images/delete.png" alt="" /></button></th>
-                </tr>
-              </tbody>
+            </tbody>
         </table>
     </div>
     <div class="total-order">
         TOTAL DE PEDIDO
-        <p>S/ 19.00</p>
+        <p>S/ {{totalOrder}}</p>
     </div>
     <div class="menu-btns-active">
         <button id="confirm" class="buttons-database-confirm">CONFIRMAR</button>
         <button id="cancel" class="buttons-database-cancel">CANCELAR</button>
     </div>
 </div>
-
