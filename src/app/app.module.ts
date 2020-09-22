@@ -13,7 +13,7 @@ import { OrderComponent } from './components/order/order.component';
     NavbarComponent,
     SummaryComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
   ],
   imports: [
     BrowserModule

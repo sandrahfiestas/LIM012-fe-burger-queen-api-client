@@ -169,9 +169,11 @@
             </thead>
             <tbody>
                 <tr class="tr-detail" *ngFor="let product of orderedProducts">
-                    <th scope="col"><button (click)="addOrderedProduct(product)" class="no-style"><img src="../../assets/images/more.png" alt="" /></button>
+                    <th scope="col"><button (click)="addOrderedProduct(product)" class="no-style"><img
+                                src="../../assets/images/more.png" alt="" /></button>
                     </th>
-                    <th scope="col"><button (click)="decreaseProduct(product)" class="no-style"><img src="../../assets/images/less.png" alt="" /></button>
+                    <th scope="col"><button (click)="decreaseProduct(product)" class="no-style"><img
+                                src="../../assets/images/less.png" alt="" /></button>
                     </th>
                     <th scope="col">
                         <p class="">{{product.count}}</p>
@@ -183,8 +185,8 @@
                     <th scope="col">
                         S/{{product.price * product.count}}
                     </th>
-                    <th scope="col"><button (click)="deleteProduct(product)" class="no-style"><img src="../../assets/images/delete.png"
-                                alt="" /></button></th>
+                    <th scope="col"><button (click)="deleteProduct(product)" class="no-style"><img
+                                src="../../assets/images/delete.png" alt="" /></button></th>
                 </tr>
             </tbody>
         </table>
