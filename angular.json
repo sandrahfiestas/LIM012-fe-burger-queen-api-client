@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/sass/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -96,9 +95,6 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/sass/styles.scss"
-            ],
             "scripts": []
           }
         },
@@ -128,13 +124,15 @@
           }
         }
       }
-      
-    }},
+    }
+  },
   "defaultProject": "LIM012-fe-burger-queen-api-client",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "sass"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
-
