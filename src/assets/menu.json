@@ -1,0 +1,166 @@
+{
+    "Menu": [
+      {
+        "id": "b1",
+        "name": "Café americano",
+        "price": 5,
+        "count": 1,
+        "type": "breakfast",
+        "subType": "",
+        "image": "/assets/images/coffee.png"
+      },
+      {
+        "id": "b2",
+        "name": "Café con leche",
+        "price": 7,
+        "count": 1,
+        "type": "breakfast",
+        "subType": "",
+        "image": "/assets/images/latte.png"
+      },
+      {
+        "id": "b3",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "count": 1,
+        "type": "breakfast",
+        "subType": "",
+        "image": "/assets/images/sandwich.png"
+      },
+      {
+        "id": "b4",
+        "name": "Jugo de fruta natural",
+        "price": 7,
+        "count": 1,
+        "type": "breakfast",
+        "subType": "",
+        "image": "/assets/images/juice.png"
+      },
+      {
+        "id": "l10",
+        "name": "Hamburguesa simple res",
+        "price": 10,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerSimple.png"
+      },
+      {
+        "id": "l11",
+        "name": "Hamburguesa doble res",
+        "price": 15,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerDouble.png"
+      },
+      {
+        "id": "l12",
+        "name": "Hamburguesa simple pollo",
+        "price": 10,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerSimple.png"
+      },
+      {
+        "id": "l13",
+        "name": "Hamburguesa doble pollo",
+        "price": 15,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerDouble.png"
+      },
+      {
+        "id": "l14",
+        "name": "Hamburguesa simple vegetariana",
+        "price": 10,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerSimple.png"
+      },
+      {
+        "id": "l15",
+        "name": "Hamburguesa doble vegetariana",
+        "price": 15,
+        "count": 1,
+        "type": "lunch",
+        "subType": "burger",
+        "image": "/assets/images/burgerDouble.png"
+      },
+      {
+        "id": "c1",
+        "name": "Papas fritas",
+        "price": 5,
+        "count": 1,
+        "type": "lunch",
+        "subType": "accompaniments",
+        "image": "/assets/images/chips.png"
+      },
+      {
+        "id": "c2",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "count": 1,
+        "type": "lunch",
+        "subType": "accompaniments",
+        "image": "/assets/images/onion.png"
+      },
+      {
+        "id": "d1",
+        "name": "Agua 500ml",
+        "price": 5,
+        "count": 1,
+        "type": "lunch",
+        "subType": "drinks",
+        "image": "/assets/images/water500.png"
+      },
+      {
+        "id": "d2",
+        "name": "Agua 750ml",
+        "price": 7,
+        "count": 1,
+        "type": "lunch",
+        "subType": "drinks",
+        "image": "/assets/images/water750.png"
+      },
+      {
+        "id": "d3",
+        "name": "Gaseosa 500ml",
+        "price": 7,
+        "count": 1,
+        "type": "lunch",
+        "subType": "drinks",
+        "image": "/assets/images/soda500.png"
+      },
+      {
+        "id": "d4",
+        "name": "Gaseosa 750ml",
+        "price": 10,
+        "count": 1,
+        "type": "lunch",
+        "subType": "drinks",
+        "image": "/assets/images/soda750.png"
+      },
+      {
+        "id": "ad1",
+        "name": "Queso",
+        "price": 1,
+        "count": 1,
+        "type": "lunch",
+        "subType": "additional",
+        "image": "/assets/images/cheese.png"
+      },
+      {
+        "id": "ad2",
+        "name": "Huevo",
+        "price": 1,
+        "count": 1,
+        "type": "lunch",
+        "subType": "additional",
+        "image": "/assets/images/egg.png"
+      }
+    ]
+  }

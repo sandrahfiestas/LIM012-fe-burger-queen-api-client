@@ -34,7 +34,7 @@
     font-size: 18px;
     line-height: 21px;
     /* align-items: center;*/
-    text-align: center; 
+    text-align: center;
     color: #FFFFFF;
     border: 1px solid #EDDA95;
   }
@@ -48,9 +48,9 @@
     display: flex;
     flex-direction: column;
     height: 60%;
-   } 
+  }
 
-   .breakfast-item {
+  .breakfast-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,36 +88,17 @@
 
 <div class="product-container">
   <div class="order-btns">
-    <button class="btns-menu">DESAYUNO</button>
-    <button class="btns-menu">ALMUERZO / CENA</button>
+    <button (click)="getBreakfast($event)" class="btns-menu">DESAYUNO</button>
+    <button (click)="getLunch($event)" class="btns-menu">ALMUERZO / CENA</button>
   </div>
   <div class="container-menu">
     <div class="breakfast-menu">
-      <div class="breakfast-item">
-        <button class="btn-add-product">Add</button>
-        <p>Cafe americano</p>
-        <p>S/ 5.00</p>
-        <img class="image-product" src="../../assets/images/coffee.png" alt="image">
-      </div>
-      <div class="breakfast-item">
-        <button class="btn-add-product">Add</button>
-        <p>Cafe con leche</p>
-        <p>S/ 7.00</p>
-        <img class="image-product" src="../assets/images/latte.png" alt="image">
-      </div>
-      <div class="breakfast-item">
-        <button class="btn-add-product">Add</button>
-        <p>Jugo de fruta natural</p>
-        <p>S/ 7.00</p>
-        <img class="image-product" src="../../assets/images/juice.png" alt="image">
-      </div>
-      <div class="breakfast-item">
-        <button class="btn-add-product">Add</button>
-        <p>Sandwich de jamon y queso</p>
-        <p>S/ 10.00</p>
-        <img class="image-product" src="../../assets/images/sandwich.png" alt="image">
+      <div class="breakfast-item" *ngFor="let product of products$">
+        <button class="btn-add-product" (click)="addProduct(product)">Add</button>
+        <p>{{product.name}}</p>
+        <p>S/ {{product.price}}</p>
+        <img class="image-product" [src]="product.image" alt="image">
       </div>
     </div>
-    <!-- <Summary summary={summary} /> -->
   </div>
 </div>
