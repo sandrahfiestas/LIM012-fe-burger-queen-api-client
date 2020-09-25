@@ -1,104 +1,28 @@
-<style>
-  .product-container {
-    height: 686px;
-    width: 574px;
-    margin-top: 19px;
-    margin-bottom: 0px;
-    background-color: #817172;
-  }
-
-  .order-btns {
-    display: flex;
-    /* justify-content: center; */
-    justify-content: space-around;
-    margin-top: 18px;
-    padding-top: 40px;
-    padding-bottom: 50px;
-  }
-
-  .btns-menu {
-    display: flex;
-    padding: 20px;
-    width: 184px;
-    height: 57px;
-    left: 85px;
-    top: 50px;
-    background: #442221;
-    border: 4px solid #A5A79A;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 22px;
-    font-family: Merge One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-    /* align-items: center;*/
-    text-align: center;
-    color: #FFFFFF;
-    border: 1px solid #EDDA95;
-  }
-
-  .container-menu {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .breakfast-menu {
-    display: flex;
-    flex-direction: column;
-    height: 60%;
-  }
-
-  .breakfast-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-
-  .btn-add-product {
-    width: 50px;
-    height: 30px;
-    left: 108px;
-    top: 311px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    background: #EAE2B7;
-    border: 4px solid #442221;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 22px;
-  }
-
-  .image-product {
-    width: 60px;
-    height: 50px;
-  }
-</style>
-
 <div class="product-container">
   <div class="order-btns">
     <button (click)="getBreakfast($event)" class="btns-menu">DESAYUNO</button>
-    <button (click)="getLunch($event)" class="btns-menu">ALMUERZO / CENA</button>
+    <button (click)="getLunch($event)" class="btns-menu">ALMUERZO CENA</button>
   </div>
   <div class="container-menu">
-    <div class="breakfast-menu">
-      <div class="breakfast-item" *ngFor="let product of products$">
-        <button class="btn-add-product" (click)="addProduct(product)">Add</button>
-        <p>{{product.name}}</p>
-        <p>S/ {{product.price}}</p>
-        <img class="image-product" [src]="product.image" alt="image">
+
+    <!-- <div class="breakfast-menu"> -->
+
+      <div class="breakfast-table" *ngFor="let product of products$">
+
+        <div class="breakfast-item">
+          <button class="btn-add-product" (click)="addProduct(product)">Add</button>
+        </div>
+        <div class="item-description">
+          <p class="p-txt">{{product.name}}</p>
+          <p class="p-txt p-price">S/ {{product.price}}</p>
+        </div>   
+        <div class="breakfast-item">
+          <img class="image-product" [src]="product.image" alt="image">
+        </div>
+
       </div>
-    </div>
+
+    <!-- </div> -->
+
   </div>
 </div>
