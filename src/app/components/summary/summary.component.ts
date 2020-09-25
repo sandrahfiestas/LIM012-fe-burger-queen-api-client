@@ -5,7 +5,7 @@ import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.sass']
+  styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
   orderedProducts = [];
