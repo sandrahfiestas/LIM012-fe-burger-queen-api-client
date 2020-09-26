@@ -2,4 +2,10 @@
 @import './variables';
 @import './mixins';
 
+* {
+  text-decoration: none;
+  transition: all 0.3s;
+  transform: all 0.3s;
+}
+
 

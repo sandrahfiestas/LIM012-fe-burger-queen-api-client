@@ -1,10 +1,4 @@
-/* @import '../../sass/variables'; */
-
-* {
-  text-decoration: none;
-  transition: all 0.3s;
-  transform: all 0.3s;
-}
+@import '../../../sass/styles.scss';
 
 li {
   list-style: none;
@@ -13,7 +7,6 @@ li {
   display: inline-block;
   position: relative;
   padding: 10px;
-
 }
 .menu .btn {
   display: block;
@@ -23,7 +16,7 @@ li {
 .menu .btn .bar {
   width: 30px;
   height: 5px;
-  background: #000;
+  background: $black;
   margin-bottom: 5px;
 }
 .menu .btn .bar:last-child {
@@ -32,26 +25,26 @@ li {
 .menu nav {
   position: absolute;
   left: 10px;
-  background-color: whitesmoke;
-  border: 3px solid #000;
+  background-color: $primary-color;
+  border: 3px solid $black;
   visibility: hidden;
   opacity: 0;
   -webkit-transform: scale(0.7);
 }
 .menu nav a {
   font-family: "Open Sans";
-  color: #222;
+  color: $black;
   padding: 10px 20px;
   display: block;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $gris-light;
   white-space: nowrap;
 }
 .menu nav li:last-child a {
   border-bottom: 0px;
 }
 .menu nav a:hover {
-  color: whitesmoke;
-  background: #000;
+  color: $gris-light;
+  background: $black;
 }
 .menu .menu_show {
   visibility: visible;
@@ -59,7 +52,7 @@ li {
   -webkit-transform: scale(1);
 }
 .navBackground { 
-  background-color: #ECA442; 
+  background-color: $primary-color; 
 }
 
 .logo {

@@ -1,11 +1,13 @@
+@import '../../../sass/styles.scss';
+
 .ticket-container {
     height: 673px;
-    background-color: #A5A79A;
+    background-color: $summary-bg;
 }
 
 .ticket-header {
     display: flex;
-    background-color: #A5A79A;
+    background-color: $summary-bg;
     flex-direction: column;
     padding-top: 15px;
     padding-bottom: 10px;
@@ -34,8 +36,8 @@
     height: 20px;
     width: 220px;
     margin-right: 35px;
-    background-color: #817172;
-    color: white;
+    background-color:$product-bg;
+    color: $white;
 }
 
 .ticket-height {
@@ -51,7 +53,7 @@
 .tr-header {
     height: 30px;
     /* position: absolute; */
-    background: #ECA442;
+    background: $primary-color;
 }
 
 .tr-detail {
@@ -83,7 +85,7 @@
     padding-right: 50px;
     padding-left: 50px;
     align-items: center;
-    background: #ECA442;
+    background: $primary-color;
     justify-content: space-between;
 }
 
@@ -101,7 +103,7 @@
     border: 1px solid #B14113;
     box-shadow: 0px 4px 4px #D62020;
     border-radius: 22px;
-    color: white;
+    color: $white;
     text-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
     outline: none;
     cursor: pointer;
@@ -121,7 +123,7 @@
     border: 1px solid #EB5F00;
     box-shadow: 0px 4px 4px #D62020;
     border-radius: 22px;
-    color: white;
+    color: $white;
     text-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
     outline: none;
     cursor: pointer;
