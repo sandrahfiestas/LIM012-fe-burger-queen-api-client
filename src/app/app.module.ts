@@ -6,6 +6,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { ProductComponent } from './components/product/product.component';
 import { OrderComponent } from './components/order/order.component';
+import { HomeComponent } from './components/home/home.component';
+import { KitchenComponent } from './components/kitchen/kitchen.component';
+import { DeliverComponent } from './components/deliver/deliver.component';
+
+import { RouteModule } from './route/route.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +19,13 @@ import { OrderComponent } from './components/order/order.component';
     SummaryComponent,
     ProductComponent,
     OrderComponent,
+    HomeComponent,
+    KitchenComponent,
+    DeliverComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
