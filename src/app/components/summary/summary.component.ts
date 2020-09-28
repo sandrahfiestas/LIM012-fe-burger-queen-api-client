@@ -5,7 +5,6 @@ import { SummaryService } from '../../services/summary.service';
 
 import { Product } from '../../models/product';
 import { Ticket } from '../../models/ticket';
-
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
@@ -75,7 +74,7 @@ export class SummaryComponent implements OnInit {
 
     this.summaryService.saveTicket(ticket);
 
-    //cuando tu quieres consumir un obserbvable, tienes que llamar al metodo
+    //cuando se quiere consumir un obserbvable, se tiene que llamar al metodo
     //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
     //devuelve esta función
     //this.summaryService.getTickets().subscribe(val => console.log(val));
