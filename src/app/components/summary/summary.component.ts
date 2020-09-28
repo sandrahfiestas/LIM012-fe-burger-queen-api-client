@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-// import { NgForm } from '@angular/forms';
 
-import { Product } from 'src/app/models/product';
+import {ProductService} from '../../services/product.service';
+import { SummaryService } from '../../services/summary.service';
+
+import { Product } from '../../models/product';
 import { Ticket } from '../../models/ticket';
 
 @Component({
@@ -16,7 +17,7 @@ export class SummaryComponent implements OnInit {
   customerName = '';
   numberTable = 0;
 
-  constructor() { }
+  constructor(private productService : ProductService, private summaryService : SummaryService) { }
 
   ngOnInit(): void {
   }
@@ -62,7 +63,7 @@ export class SummaryComponent implements OnInit {
 
   //Pedido para enviar a Firebase
 
-  orderTaken() {
+  saveTicket() {
     let ticket: Ticket = {
       numberTable: this.numberTable,
       client: this.customerName,
@@ -72,8 +73,11 @@ export class SummaryComponent implements OnInit {
       total: this.totalOrder
     }
 
-    console.log(ticket)
+    this.summaryService.saveTicket(ticket);
+
+    //cuando tu quieres consumir un obserbvable, tienes que llamar al metodo
+    //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
+    //devuelve esta función
+    //this.summaryService.getTickets().subscribe(val => console.log(val));
   }
-
-
 }
