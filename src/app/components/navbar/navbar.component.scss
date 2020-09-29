@@ -1,60 +1,55 @@
 @import '../../../sass/styles.scss';
 
-li {
-  list-style: none;
-}
-.menu {
-  display: inline-block;
-  position: relative;
-  padding: 10px;
-}
-.menu .btn {
-  display: block;
-  cursor: pointer;
-  padding: 10px;
-}
-.menu .btn .bar {
-  width: 30px;
-  height: 5px;
-  background: $black;
-  margin-bottom: 5px;
-}
-.menu .btn .bar:last-child {
-  margin-bottom: 0px;
-}
-.menu nav {
-  position: absolute;
-  left: 10px;
-  background-color: $primary-color;
-  border: 3px solid $black;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: scale(0.7);
-}
-.menu nav a {
-  font-family: "Open Sans";
-  color: $black;
-  padding: 10px 20px;
-  display: block;
-  border-bottom: 1px solid $gris-light;
-  white-space: nowrap;
-}
-.menu nav li:last-child a {
-  border-bottom: 0px;
-}
-.menu nav a:hover {
-  color: $gris-light;
-  background: $black;
-}
-.menu .menu_show {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1);
-}
 .navBackground { 
   background-color: $primary-color; 
 }
 
 .logo {
   width: 95px
+}
+
+li {
+  list-style: none;
+}
+
+.menu {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+}
+
+.menu .btn {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu nav {
+  position: absolute;
+  margin-top: 29px;
+  left: 10px;
+  background-color: $primary-color;
+  visibility: hidden;
+  opacity: 0;
+  height: 220px;
+}
+
+.menu nav a {
+  color: $black;
+  font-weight: bold;
+  padding: 15px 20px;
+  display: block;
+  border-bottom: 1px solid $gris-light;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.menu nav a:hover {
+  color: $gris-light;
+  background: $black;
+}
+
+.menu .menu_show {
+  visibility: visible;
+  opacity: 1;
 }
