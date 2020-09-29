@@ -3,11 +3,11 @@
         <div class="ticket-subtitle">CONSUMO</div>
         <div class="ticket-client">
             Cliente :
-            <input class="ticket-input" type="text" placeholder="Nombre de cliente" />
+            <input class="ticket-input" type="text" placeholder="Nombre de cliente" [(ngModel)]="customerName" />
         </div>
         <div class="ticket-client">
             Numero de mesa :
-            <input class="ticket-input" type="text" placeholder="Numero de mesa" />
+            <input class="ticket-input" type="text" placeholder="Numero de mesa" [(ngModel)]="numberTable" />
         </div>
         <div class="ticket-client">
             Hora de atención :
@@ -56,7 +56,7 @@
         <p>S/ {{totalOrder}}</p>
     </div>
     <div class="menu-btns-active">
-        <button id="confirm" class="buttons-database-confirm">CONFIRMAR</button>
+        <button id="confirm" class="buttons-database-confirm" (click)="saveTicket()">CONFIRMAR</button>
         <button id="cancel" class="buttons-database-cancel">CANCELAR</button>
     </div>
 </div>

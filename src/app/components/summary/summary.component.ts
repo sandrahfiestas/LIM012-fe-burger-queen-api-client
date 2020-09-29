@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from 'src/app/models/product';
 
+import {ProductService} from '../../services/product.service';
+import { SummaryService } from '../../services/summary.service';
+
+import { Product } from '../../models/product';
+import { Ticket } from '../../models/ticket';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
@@ -10,8 +13,10 @@ import { Product } from 'src/app/models/product';
 export class SummaryComponent implements OnInit {
   orderedProducts = [];
   totalOrder = 0;
+  customerName = '';
+  numberTable = 0;
 
-  constructor() { }
+  constructor(private productService : ProductService, private summaryService : SummaryService) { }
 
   ngOnInit(): void {
   }
@@ -48,10 +53,30 @@ export class SummaryComponent implements OnInit {
     this.calculateTotal();
   }
 
-  calculateTotal(){
+  calculateTotal() {
     this.totalOrder = 0;
     this.orderedProducts.forEach((product) => {
       this.totalOrder += product.count * product.price;
     });
+  }
+
+  //Pedido para enviar a Firebase
+
+  saveTicket() {
+    let ticket: Ticket = {
+      numberTable: this.numberTable,
+      client: this.customerName,
+      date: new Date().getTime(),
+      status: 'pending',
+      orderedProducts: this.orderedProducts,
+      total: this.totalOrder
+    }
+
+    this.summaryService.saveTicket(ticket);
+
+    //cuando se quiere consumir un obserbvable, se tiene que llamar al metodo
+    //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
+    //devuelve esta función
+    //this.summaryService.getTickets().subscribe(val => console.log(val));
   }
 }
