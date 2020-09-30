@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+// service
+import { FirebaseService } from '../../services/firebase.service';
+
+// class Ticket
+import { Ticket } from '../../models/ticket';
+
+
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
@@ -7,9 +14,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KitchenComponent implements OnInit {
 
-  constructor() { }
+  orderList: Ticket[];
+
+  constructor(
+    private firebaseService: FirebaseService
+  ) { }
 
   ngOnInit(): void {
+    this.firebaseService.getOrders()
+      .snapshotChanges()
+      .subscribe(item => {
+        this.orderList = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.orderList.push(x as Ticket);
+        });
+      });
   }
 
 }

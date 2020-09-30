@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// service
-import { FirebaseService } from '../../services/firebase.service';
-
-// class Ticket
-import { Ticket } from '../../models/ticket';
 
 @Component({
   selector: 'app-deliver',
@@ -13,23 +8,9 @@ import { Ticket } from '../../models/ticket';
 })
 export class DeliverComponent implements OnInit {
 
-  orderList: Ticket[];
-
-  constructor(
-    private firebaseService: FirebaseService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.firebaseService.getOrders()
-      .snapshotChanges()
-      .subscribe(item => {
-        this.orderList = [];
-        item.forEach(element => {
-          let x = element.payload.toJSON();
-          x["$key"] = element.key;
-          this.orderList.push(x as Ticket);
-        });
-      });
-  }
 
+  }
 }

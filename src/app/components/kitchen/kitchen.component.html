@@ -17,12 +17,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>12</td>
-              <td>Cami</td>
+            <tr *ngFor="let order of orderList" class="table-warning">
+              <td>{{order.numberTable}}</td>
+              <td>{{order.client}}</td>
               <td>2 : 20</td>
               <td>1 cafe americano</td>
-              <td>2 : 30</td>
+              <td>{{order.date}}</td>
               <td>10</td>
               <td><button class="button-confirm">Confirmar</button></td>
               <td><button class="button-cancel">Cancelar</button></td>
