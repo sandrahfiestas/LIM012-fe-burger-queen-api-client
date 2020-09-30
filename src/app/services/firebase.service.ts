@@ -11,6 +11,9 @@ import { Product } from '../models/product';
 })
 export class FirebaseService {
 
+  // declarando orderList
+  orderList: AngularFireList<any>;
+
   private tickets: AngularFireList<Ticket>;
   // private products: AngularFireList<Product>;
 
@@ -39,5 +42,12 @@ export class FirebaseService {
         }));
       })
     );
+  }
+
+
+  // Traer ordenes de Firebase
+  getOrders()
+  {
+    return this.orderList = this.db.list('tickets');
   }
 }
