@@ -1,0 +1,59 @@
+@import "../../../sass/styles.scss";
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.container-deliver {
+  background-color: #817172;
+}
+
+.deliver-detail {
+  display: flex;
+  width: 919px;
+  height: 599px;
+  align-items: center;
+  margin: 0px auto;
+  justify-content: center;
+  background-color: #817172;
+  box-sizing: border-box;
+}
+
+.deliver-table {
+  width: 836px;
+  height: 471px;
+  left: 42px;
+  top: 86px;
+  background: #a5a79a;
+}
+
+th {
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-right: 124px;
+}
+
+td {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.deliver-head {
+    background-color: #eae2b7;
+
+    // height: 40px;
+    border: 2px solid #817172;
+    box-sizing: border-box;
+}
+
+.deliver-button {
+  background: #ee6d1a;
+  border: 0.5px solid #b14113;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px #d62020;
+  border-radius: 22px;
+}
