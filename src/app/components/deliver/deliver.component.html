@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 
+
 <div class="container-deliver">
     <div class="deliver-detail">
       <section class="">
@@ -26,3 +27,38 @@
       </section>
     </div>
   </div>
+
+<p>PEDIDOS POR ENTREGAR</p>
+<h1> COCINA </h1>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="text-center">LISTA DE ORDENES</h5>
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr class="table-info">
+          <th scope="col">N° Mesa</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Hora de Pedido</th>
+          <th scope="col">Pedido</th>
+          <th scope="col" >Hora de Término</th>
+          <th scope="col">Tiempo de Preparación</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Cancelar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList" class="table-warning">
+          <td>{{order.numberTable}}</td>
+          <td>{{order.client}}</td>
+          <td>12:00</td>
+          <td>pedido</td>
+          <td>{{order.date}}</td>
+          <td>10 min</td>
+          <td><button>Confirmar</button></td>
+          <td><button>Cancelar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
