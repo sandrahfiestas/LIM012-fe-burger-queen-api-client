@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ProductService} from '../../services/product.service';
+import { ProductService } from '../../services/product.service';
 import { SummaryService } from '../../services/summary.service';
 
 import { Product } from '../../models/product';
@@ -14,11 +14,18 @@ export class SummaryComponent implements OnInit {
   orderedProducts = [];
   totalOrder = 0;
   customerName = '';
-  numberTable = 0;
+  numberTable = '';
 
-  constructor(private productService : ProductService, private summaryService : SummaryService) { }
+  constructor(private productService: ProductService, private summaryService: SummaryService) { }
 
   ngOnInit(): void {
+  }
+
+  resetValues() {
+    this.orderedProducts = [];
+    this.totalOrder = 0;
+    this.customerName = '';
+    this.numberTable = '';
   }
 
   addOrderedProduct(product: Product) {
@@ -72,11 +79,17 @@ export class SummaryComponent implements OnInit {
       total: this.totalOrder
     }
 
-    this.summaryService.saveTicket(ticket);
-
-    //cuando se quiere consumir un obserbvable, se tiene que llamar al metodo
-    //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
-    //devuelve esta función
-    //this.summaryService.getTickets().subscribe(val => console.log(val));
+    this.summaryService.saveTicket(ticket)
+    this.resetValues();
   }
+
+  cancelTicket() {
+    this.resetValues();
+  }
+
+
+  //cuando se quiere consumir un obserbvable, se tiene que llamar al metodo
+  //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
+  //devuelve esta función
+  //this.summaryService.getTickets().subscribe(val => console.log(val));
 }

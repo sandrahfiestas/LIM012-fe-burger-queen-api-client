@@ -26,14 +26,14 @@ import { RouteModule } from './route/route.module';
     OrderComponent,
     KitchenComponent,
     HomeComponent,
-    DeliverComponent,
+    DeliverComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouteModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule  
+    AngularFireDatabaseModule
   ],
  
   providers: [],
