@@ -43,11 +43,4 @@ export class FirebaseService {
       })
     );
   }
-
-
-  // Traer ordenes de Firebase
-  getOrders()
-  {
-    return this.orderList = this.db.list('tickets');
-  }
 }

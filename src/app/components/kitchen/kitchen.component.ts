@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-// service
-import { FirebaseService } from '../../services/firebase.service';
-
 // class Ticket
 import { Ticket } from '../../models/ticket';
-
-
+import { KitchenService } from '../../services/kitchen.service';
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
@@ -14,23 +10,19 @@ import { Ticket } from '../../models/ticket';
 })
 export class KitchenComponent implements OnInit {
 
-  orderList: Ticket[];
+
+  tickets: Ticket[];
 
   constructor(
-    private firebaseService: FirebaseService
+   private kitchenService: KitchenService
   ) { }
 
   ngOnInit(): void {
-    this.firebaseService.getOrders()
-      .snapshotChanges()
-      .subscribe(item => {
-        this.orderList = [];
-        item.forEach(element => {
-          let x = element.payload.toJSON();
-          x["$key"] = element.key;
-          this.orderList.push(x as Ticket);
-        });
-      });
+    this.kitchenService.getTickets()
+      .subscribe(tickets =>{
+        this.tickets = tickets;
+      }
+      );
   }
 
 }
