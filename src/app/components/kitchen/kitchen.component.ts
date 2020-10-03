@@ -14,6 +14,8 @@ import { Ticket } from '../../models/ticket';
   styleUrls: ['./kitchen.component.scss']
 })
 export class KitchenComponent implements OnInit {
+
+  public currentTime;
   
   orderList: Ticket[];
 
@@ -41,5 +43,9 @@ export class KitchenComponent implements OnInit {
   
   productsArray(obj){ 
     return Object.keys(obj).map((key)=>{ return obj[key]}); 
+  }
+
+  confirmTicket(){
+    this.currentTime= new Date().getTime();
   }
 }
