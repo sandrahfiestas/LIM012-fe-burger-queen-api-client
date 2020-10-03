@@ -15,7 +15,4 @@ export class SummaryService {
     this.firebaseService.saveTicket(ticket);
   }
 
-  getTickets(): Observable<Ticket[]> {
-    return this.firebaseService.getTickets();
-  }
 }

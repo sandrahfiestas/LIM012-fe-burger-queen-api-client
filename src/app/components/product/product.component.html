@@ -3,26 +3,19 @@
     <button (click)="getBreakfast($event)" class="btns-menu">DESAYUNO</button>
     <button (click)="getLunch($event)" class="btns-menu">ALMUERZO CENA</button>
   </div>
+
   <div class="container-menu">
-
-    <!-- <div class="breakfast-menu"> -->
-
-      <div class="breakfast-table" *ngFor="let product of products$">
-
-        <div class="breakfast-item">
-          <button class="btn-add-product" (click)="addProduct(product)">Add</button>
-        </div>
-        <div class="item-description">
-          <p class="p-txt">{{product.name}}</p>
-          <p class="p-txt p-price">S/ {{product.price}}</p>
-        </div>   
-        <div class="breakfast-item">
-          <img class="image-product" [src]="product.image" alt="image">
-        </div>
-
+    <div class="breakfast-table" *ngFor="let product of products$">
+      <div class="breakfast-item">
+        <button class="btn-add-product" (click)="addProduct(product)">Add</button>
       </div>
-
-    <!-- </div> -->
-
+      <div class="item-description">
+        <p class="p-txt">{{product.name}}</p>
+        <p class="p-txt p-price">S/{{ product.price | number:'1.2-2' }}</p>
+      </div>
+      <div class="breakfast-item">
+        <img class="image-product" [src]="product.image" alt="image">
+      </div>
+    </div>
   </div>
 </div>
