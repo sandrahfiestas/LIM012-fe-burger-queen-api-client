@@ -19,6 +19,9 @@
     justify-content: center;
     background-color:#817172;
     box-sizing: border-box;
+
+    max-height: 700px;
+    overflow-y: auto;
 }
 
 .kitchen-table {
@@ -39,10 +42,6 @@ th {
 td {
     text-align: center;
 }
-
-// .kitchen-head {
-//     background-color: #EAE2B7;
-// }
 
 .button-confirm {
     background: #EE6D1A;
