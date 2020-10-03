@@ -17,20 +17,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ticket of tickets" class="table-warning">
-              <td>{{ticket.numberTable}}</td>
-              <td>{{ticket.client}}</td>
-              <td>{{ticket.date | date:'h:mm'}}</td>
+            <tr *ngFor="let order of orderList" class="table-warning">
+              <td>{{order.numberTable}}</td>
+              <td>{{order.client}}</td>
+              <td>{{order.date | date: 'h:mm'}}</td>
               <td>
                 <ul>
-                  <li *ngFor="let product of ticket.orderedProducts">
-                    {{product.count}} {{product.name}}
+                  <li *ngFor="let product of productsArray(order.orderedProducts)"> 
+                  {{product.count}}
+                  {{product.name}}
                   </li>
                 </ul>
               </td>
-              <td>hora</td>
-              <td>10</td>
-              <td><button class="button-confirm">Confirmar</button></td>
+              <td>{{currentTime | date: 'h:mm'}}</td>
+              <td>{{currentMinutes}}</td>
+              <td></td>
+              <td><button (click)="confirmTicket(order)" class="button-confirm">Confirmar</button></td>
               <td><button class="button-cancel">Cancelar</button></td>
             </tr>
           </tbody>

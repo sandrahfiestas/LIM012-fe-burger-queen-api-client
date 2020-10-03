@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// service
+import { FirebaseService } from '../../services/firebase.service';
+
 // class Ticket
 import { Ticket } from '../../models/ticket';
 import { KitchenService } from '../../services/kitchen.service';
@@ -10,19 +13,47 @@ import { KitchenService } from '../../services/kitchen.service';
 })
 export class KitchenComponent implements OnInit {
 
+  public currentTime;
+  public currentMinutes;
 
-  tickets: Ticket[];
+  orderList: Ticket[];
 
   constructor(
-   private kitchenService: KitchenService
+    private firebaseService: FirebaseService,
   ) { }
 
   ngOnInit(): void {
-    this.kitchenService.getTickets()
-      .subscribe(tickets =>{
-        this.tickets = tickets;
-      }
-      );
+
+    this.firebaseService.getOrders()
+      .snapshotChanges()
+      .subscribe(item => {
+        this.orderList = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.orderList.push(x as Ticket);
+          const listProduct = element;
+          console.log(this.orderList);
+                    
+          return { listProduct, ...x };
+        });
+      });
+  }
+  
+  productsArray(obj){ 
+    return Object.keys(obj).map((key)=>{ return obj[key]}); 
   }
 
+  confirmTicket(order){
+    this.currentTime= new Date().getTime();
+
+      // --Calcula minutes and seconds
+      let datesCalc = this.currentTime - this.orderList.find((x) => x.date).date;
+      let Mins = Math.floor(((datesCalc % 86400000) % 3600000) / 60000);
+      let Seg = Math.floor((((datesCalc % 86400000) % 3600000) % 60000) / 1000);
+      this.currentMinutes = (Mins + 'm. ' + Seg + 's.');
+    
+      console.log(order.$key);
+  
+  }
 }
