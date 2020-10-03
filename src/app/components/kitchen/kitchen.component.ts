@@ -5,7 +5,7 @@ import { FirebaseService } from '../../services/firebase.service';
 
 // class Ticket
 import { Ticket } from '../../models/ticket';
-import { KitchenService } from '../../services/kitchen.service';
+
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',

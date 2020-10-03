@@ -43,4 +43,10 @@ export class FirebaseService {
       })
     );
   }
+
+  getOrders()
+  {
+    return this.orderList = this.db.list('tickets');
+  }
+
 }
