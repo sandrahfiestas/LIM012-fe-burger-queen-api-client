@@ -32,7 +32,7 @@
               <td>{{currentTime | date: 'h:mm'}}</td>
               <td>{{currentMinutes}}</td>
               <td></td>
-              <td><button class="button-confirm">Confirmar</button></td>
+              <td><button (click)="confirmTicket()" class="button-confirm">Confirmar</button></td>
               <td><button class="button-cancel">Cancelar</button></td>
             </tr>
           </tbody>
