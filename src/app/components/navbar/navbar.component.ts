@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 declare var $: any; 
 @Component({
@@ -8,17 +8,21 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
+  @Input() title: string;
+    
   // hora
   private date = new Date();
-
+  
   public hour: any;
   public minute: string;
   public ampm: string;
-
-
+  
+  
   constructor() { }
   
   ngOnInit(): void {
+    
+  // this.title ="Hola Mundo!"
 
     // hora
     setInterval(() => {
