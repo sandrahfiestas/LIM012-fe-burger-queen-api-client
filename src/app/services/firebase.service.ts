@@ -46,7 +46,16 @@ export class FirebaseService {
 
   getOrders()
   {
-    return this.orderList = this.db.list('tickets');
+    // return this.orderList = this.db.list('tickets');
+    this.orderList = this.db.list('tickets', ref =>
+    ref.orderByChild('status').equalTo('pending'))
+    return this.orderList;
+  }
+  
+  updateOrder($key:string ){
+    this.orderList.update($key , {
+      status: 'ready',
+    });
   }
 
 }
