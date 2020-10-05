@@ -58,4 +58,8 @@ export class FirebaseService {
     });
   }
 
+  deleteOrder($key:string) {
+    this.orderList.remove($key);
+  }
+
 }

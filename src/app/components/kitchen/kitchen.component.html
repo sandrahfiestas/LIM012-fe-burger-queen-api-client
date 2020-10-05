@@ -33,7 +33,7 @@
               <td>{{currentMinutes}}</td>
               <td></td>
               <td><button (click)="confirmTicket(order.$key)" class="button-confirm">Confirmar</button></td>
-              <td><button class="button-cancel">Cancelar</button></td>
+              <td><button (click)="deleteTicket(order.$key)" class="button-cancel">Cancelar</button></td>
             </tr>
           </tbody>
         </table>

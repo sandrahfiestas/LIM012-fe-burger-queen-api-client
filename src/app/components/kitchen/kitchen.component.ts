@@ -59,5 +59,10 @@ export class KitchenComponent implements OnInit {
      }
   }
 
+  deleteTicket($key : string) {
+    if(confirm('¿Confirma que desea eliminar orden?')) {
+      this.firebaseService.deleteOrder($key);
+    }
+  }
 
 }
