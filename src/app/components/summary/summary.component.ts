@@ -73,7 +73,8 @@ export class SummaryComponent implements OnInit {
     let ticket: Ticket = {
       numberTable: this.numberTable,
       client: this.customerName,
-      date: new Date().getTime(),
+      startDate: new Date().getTime(),
+      endDate: null,
       status: 'pending',
       orderedProducts: this.orderedProducts,
       total: this.totalOrder

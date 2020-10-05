@@ -20,7 +20,7 @@
             <tr *ngFor="let order of orderList" class="table-warning">
               <td>{{order.numberTable}}</td>
               <td>{{order.client}}</td>
-              <td>{{order.date | date: 'h:mm'}}</td>
+              <td>{{order.startDate | date: 'h:mm'}}</td>
               <td>
                 <ul>
                   <li *ngFor="let product of productsArray(order.orderedProducts)"> 
@@ -29,11 +29,12 @@
                   </li>
                 </ul>
               </td>
-              <td>{{currentTime | date: 'h:mm'}}</td>
-              <td>{{currentMinutes}}</td>
-              <td></td>
-              <td><button (click)="confirmTicket(order.$key)" class="button-confirm">Confirmar</button></td>
-              <td><button (click)="deleteTicket(order.$key)" class="button-cancel">Cancelar</button></td>
+              <td>{{order.endDate | date: 'h:mm'}}</td>
+              <td>{{order.endDate - order.startDate | date: 'mm:ss'}}</td>
+              <td>{{order.status}}</td>
+              <td><button (click)="confirmTicket(order.$key)" *ngIf="order.status == 'pending'" class="button-confirm">Confirmar</button></td>
+              <td><button (click)="deleteTicket(order.$key)" *ngIf="order.status == 'pending'"  class="button-cancel">Cancelar</button></td>
+              <!-- <td><button (click)="deleteTicket(order.$key)" [disabled]="order.status == 'ready'" [ngClass]="(status == 'ready') ? 'button-cancel disabled-button' : 'button-cancel enabled-button'">Cancelar</button></td> -->
             </tr>
           </tbody>
         </table>

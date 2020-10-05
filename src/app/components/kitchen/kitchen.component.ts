@@ -13,9 +13,6 @@ import { Ticket } from '../../models/ticket';
 })
 export class KitchenComponent implements OnInit {
 
-  public currentTime;
-  public currentMinutes;
-
   orderList: Ticket[];
 
   constructor(
@@ -45,17 +42,10 @@ export class KitchenComponent implements OnInit {
   }
 
   confirmTicket($key: string){
-      this.currentTime= new Date().getTime();
-
-      // --Calcula minutes and seconds
-      let datesCalc = this.currentTime - this.orderList.find((x) => x.date).date;
-      let Mins = Math.floor(((datesCalc % 86400000) % 3600000) / 60000);
-      let Seg = Math.floor((((datesCalc % 86400000) % 3600000) % 60000) / 1000);
-      this.currentMinutes = (Mins + 'm. ' + Seg + 's.');
-          
+      
      if(confirm('desea confirmar el pedido como LISTO')){
-       // actualiza status
-       this.firebaseService.updateOrder($key);
+       // actualiza status y enddate
+       this.firebaseService.completeOrder($key);
      }
   }
 
