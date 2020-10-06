@@ -2,9 +2,7 @@ import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-
 import { Ticket } from '../models/ticket';
-import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -40,25 +38,29 @@ export class FirebaseService {
     );
   }
 
-  getOrders()
-  {
+  getOrders() {
     // return this.orderList = this.db.list('tickets');
     this.orderList = this.db.list('tickets')
     return this.orderList;
   }
-  
-  completeOrder($key:string){
-    this.orderList.update($key , {
+
+  completeOrder($key: string) {
+    this.orderList.update($key, {
       status: 'ready',
       endDate: new Date().getTime()
     });
   }
 
-  deleteOrder($key:string) {
+  deleteOrder($key: string) {
     this.orderList.remove($key);
   }
 
   getReadyTickets() {
-    return this.db.list('tickets', ticket =>  ticket.orderByChild('status').equalTo('ready'));
+    return this.db.list('tickets', ticket => ticket.orderByChild('status').equalTo('ready'));
   }
+
+  deleteOrderDelivered($key: string) {
+    this.tickets.remove($key);
+  }
+
 }

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Ticket } from '../models/ticket';
 import { FirebaseService } from './firebase.service';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +9,10 @@ export class DeliverService {
 
   getReadyTickets() {
     return this.firebaseService.getReadyTickets();
+  }
+
+  deleteOrderDelivered($key: string) {
+    return this.firebaseService.deleteOrderDelivered($key);
   }
   
 }

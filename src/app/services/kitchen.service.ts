@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Ticket } from '../models/ticket';
 import { FirebaseService } from './firebase.service';
 
-
 @Injectable({
   providedIn: 'root'
 })

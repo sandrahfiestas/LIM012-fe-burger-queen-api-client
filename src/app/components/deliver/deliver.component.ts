@@ -32,4 +32,10 @@ export class DeliverComponent implements OnInit {
   productsArray(obj){ 
     return Object.keys(obj).map((key)=>{ return obj[key]}); 
   }
+
+  deliveredOrder($key : string) {
+    if(confirm('¿Confirma que desea eliminar orden?')) {
+      this.deliverService.deleteOrderDelivered($key);
+  }
+}
 }
