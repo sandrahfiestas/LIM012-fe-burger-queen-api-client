@@ -29,7 +29,13 @@
     height: 471px;
     left: 42px;
     top: 86px;
-    background: #A5A79A;
+    background: #a5a79a;
+}
+
+.kitchen-head {
+    background-color: #eae2b7;
+    border: 2px solid #817172;
+    box-sizing: border-box;
 }
 
 th {
@@ -38,8 +44,17 @@ th {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.tr-detail {
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
 td {
     text-align: center;
+}
+
+.list-none {
+    list-style: none;
 }
 
 .button-confirm {

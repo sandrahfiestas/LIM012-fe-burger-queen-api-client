@@ -7,19 +7,19 @@
           <table>
             <thead>
               <tr class="deliver-head">
-                <th>N° MESA</th>
+                <th >N° MESA</th>
                 <th>CLIENTE</th>
                 <th>PEDIDO</th>
                 <th>ENTREGADO</th>
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let ticket of tickets">
+                <tr *ngFor="let ticket of tickets" class="tr-detail">
                   <td>{{ticket.numberTable}}</td>
                   <td>{{ticket.client}}</td>
                   <td>
                     <ul>
-                      <li *ngFor="let orderedProduct of productsArray(ticket.orderedProducts)">
+                      <li *ngFor="let orderedProduct of productsArray(ticket.orderedProducts)" class="list-none">
                         {{orderedProduct.count}}
                         {{orderedProduct.name}}
                       </li>

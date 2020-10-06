@@ -32,6 +32,13 @@
   background: #a5a79a;
 }
 
+.deliver-head {
+  background-color: #eae2b7;
+  height: 40px;
+  border: 2px solid #817172;
+  box-sizing: border-box;
+ }
+
 th {
   font-size: 20px;
   text-align: center;
@@ -39,17 +46,21 @@ th {
   padding-right: 124px;
 }
 
+.tr-detail {
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
 td {
   text-align: center;
   margin-top: 10px;
 }
 
-.deliver-head {
-  background-color: #eae2b7;
-  // height: 40px;
-  border: 2px solid #817172;
-  box-sizing: border-box;
+.list-none {
+  list-style: none;
 }
+
+
 
 .deliver-button {
   background: #ee6d1a;

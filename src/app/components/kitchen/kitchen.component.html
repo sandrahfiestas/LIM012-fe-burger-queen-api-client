@@ -17,13 +17,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let order of orderList" class="table-warning">
+            <tr *ngFor="let order of orderList" class="tr-detail">
               <td>{{order.numberTable}}</td>
               <td>{{order.client}}</td>
               <td>{{order.startDate | date: 'h:mm'}}</td>
               <td>
                 <ul>
-                  <li *ngFor="let product of productsArray(order.orderedProducts)"> 
+                  <li *ngFor="let product of productsArray(order.orderedProducts)" class="list-none"> 
                   {{product.count}}
                   {{product.name}}
                   </li>
