@@ -43,7 +43,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerSimple.png"
+        "image": "/assets/images/burger_simple.png"
       },
       {
         "id": "l11",
@@ -52,7 +52,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerDouble.png"
+        "image": "/assets/images/burger_doble.png"
       },
       {
         "id": "l12",
@@ -61,7 +61,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerSimple.png"
+        "image": "/assets/images/burger_simple.png"
       },
       {
         "id": "l13",
@@ -70,7 +70,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerDouble.png"
+        "image": "/assets/images/burger_doble.png"
       },
       {
         "id": "l14",
@@ -79,7 +79,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerSimple.png"
+        "image": "/assets/images/burger_simple.png"
       },
       {
         "id": "l15",
@@ -88,7 +88,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "burger",
-        "image": "/assets/images/burgerDouble.png"
+        "image": "/assets/images/burger_doble.png"
       },
       {
         "id": "c1",
@@ -106,7 +106,7 @@
         "count": 1,
         "type": "lunch",
         "subType": "accompaniments",
-        "image": "/assets/images/onion.png"
+        "image": "/assets/images/onion_rings.png"
       },
       {
         "id": "d1",
