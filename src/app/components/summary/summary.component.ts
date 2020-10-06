@@ -73,7 +73,8 @@ export class SummaryComponent implements OnInit {
     let ticket: Ticket = {
       numberTable: this.numberTable,
       client: this.customerName,
-      date: new Date().getTime(),
+      startDate: new Date().getTime(),
+      endDate: null,
       status: 'pending',
       orderedProducts: this.orderedProducts,
       total: this.totalOrder
@@ -86,10 +87,5 @@ export class SummaryComponent implements OnInit {
   cancelTicket() {
     this.resetValues();
   }
-
-
-  //cuando se quiere consumir un obserbvable, se tiene que llamar al metodo
-  //suscribirte y dentro de el es como una promesa, es decir el val es lo que 
-  //devuelve esta función
-  //this.summaryService.getTickets().subscribe(val => console.log(val));
+  
 }

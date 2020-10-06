@@ -14,11 +14,18 @@
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <td>16</td>
-                  <td>Pablo</td>
-                  <td>1 café con leche</td>
-                  <td><button class="deliver-button">Entregado</button></td>
+                <tr *ngFor="let ticket of tickets">
+                  <td>{{ticket.numberTable}}</td>
+                  <td>{{ticket.client}}</td>
+                  <td>
+                    <ul>
+                      <li *ngFor="let orderedProduct of productsArray(ticket.orderedProducts)">
+                        {{orderedProduct.count}}
+                        {{orderedProduct.name}}
+                      </li>
+                    </ul>
+                  </td>
+                  <td><button (click)="deliveredOrder(ticket.$key)" class="deliver-button">Entregado</button></td>
                 </tr>
             </tbody>
           </table>

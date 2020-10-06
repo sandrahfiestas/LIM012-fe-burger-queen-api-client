@@ -2,7 +2,8 @@ import { Product } from './product';
 
 export interface Ticket {
     client: string;
-    date: number;
+    startDate: number;
+    endDate: number; 
     numberTable: string;
     status: string;
     orderedProducts: Array<Product>,

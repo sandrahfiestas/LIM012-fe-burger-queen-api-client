@@ -2,9 +2,7 @@ import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-
 import { Ticket } from '../models/ticket';
-import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +19,6 @@ export class FirebaseService {
     this.tickets = this.db.list('/tickets', (ref) =>
       ref.orderByChild('date')
     );
-
-    // this.products = this.db.list('/products', (ref) =>
-    //   ref.orderByChild('date')
-    // );
   }
 
   saveTicket(ticket: Ticket) {
@@ -34,7 +28,7 @@ export class FirebaseService {
   getTickets(): Observable<Ticket[]> {
 
     return this.tickets.snapshotChanges().pipe(
-      //?A veces hay que importar map manualmente de rsjs/operators
+      //A veces hay que importar map manualmente de rsjs/operators
       map((changes) => {
         return changes.map((c) => ({
           $key: c.payload.key,
@@ -44,22 +38,29 @@ export class FirebaseService {
     );
   }
 
-  getOrders()
-  {
+  getOrders() {
     // return this.orderList = this.db.list('tickets');
-    this.orderList = this.db.list('tickets', ref =>
-    ref.orderByChild('status').equalTo('pending'))
+    this.orderList = this.db.list('tickets')
     return this.orderList;
   }
-  
-  updateOrder($key:string ){
-    this.orderList.update($key , {
+
+  completeOrder($key: string) {
+    this.orderList.update($key, {
       status: 'ready',
+      endDate: new Date().getTime()
     });
   }
 
-  deleteOrder($key:string) {
+  deleteOrder($key: string) {
     this.orderList.remove($key);
+  }
+
+  getReadyTickets() {
+    return this.db.list('tickets', ticket => ticket.orderByChild('status').equalTo('ready'));
+  }
+
+  deleteOrderDelivered($key: string) {
+    this.tickets.remove($key);
   }
 
 }
